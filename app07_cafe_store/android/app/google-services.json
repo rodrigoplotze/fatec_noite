@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701964141696",
+    "project_id": "fatec-loja-cafe-noite-2022",
+    "storage_bucket": "fatec-loja-cafe-noite-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701964141696:android:5d2eff9b144f151d8d9265",
+        "android_client_info": {
+          "package_name": "com.example.app07_cafe_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701964141696-sv7tbvovi0oug5pr6bbfgo4f5nd24p5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWhE1Cmpdp1A2KzalO1BxaqQXC-UNrtFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701964141696-sv7tbvovi0oug5pr6bbfgo4f5nd24p5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
