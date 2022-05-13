@@ -1,4 +1,5 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PrincipalPage extends StatefulWidget {
@@ -23,14 +24,15 @@ class _PrincipalPageState extends State<PrincipalPage> {
               IconButton(
                 tooltip: 'sair',
                 onPressed: () {
-
+                  FirebaseAuth.instance.signOut();
                   Navigator.pushReplacementNamed(context, 'login');
                 },
                 icon: const Icon(Icons.logout),
               ),
               Text(
-                '',
+                FirebaseAuth.instance.currentUser!.email.toString(),
                 style: const TextStyle(fontSize: 12),
+                
               ),
             ],
           ),

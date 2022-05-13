@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/mensagem.dart';
@@ -90,7 +92,25 @@ class _LoginPageState extends State<LoginPage> {
   // LOGIN com Firebase Auth
   //
   void login(email, senha) {
- 
-
-  }
+    FirebaseAuth.instance
+    .signInWithEmailAndPassword(email: email, password: senha)
+    .then((res){
+      sucesso(context, 'Usuário autenticado com sucesso.');
+      Navigator.pushReplacementNamed(context, 'principal');
+    }).catchError((e){
+      switch(e.code){
+        case 'invalid-email':
+          erro(context,'O formato do email é inválido.');
+          break;
+        case 'user-not-found':
+          erro(context,'Usuário não encontrado.');
+          break;
+        case 'wrong-password':
+          erro(context,'Senha incorreta.');
+          break;
+        default:
+          erro(context,e.code.toString());
+      }
+   });
+   }
 }
