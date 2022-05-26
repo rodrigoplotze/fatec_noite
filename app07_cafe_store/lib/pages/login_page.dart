@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             campoTexto('Email', txtEmail, Icons.email),
             const SizedBox(height: 20),
             campoTexto('Senha', txtSenha, Icons.lock, senha: true),
-            TextButton(onPressed: (){}, child: const Text('Esqueceu a senha?', textAlign: TextAlign.end,)),
+            //TextButton(onPressed: (){}, child: const Text('Esqueceu a senha?', textAlign: TextAlign.end,)),
             const SizedBox(height: 40),
             OutlinedButton(
               style: OutlinedButton.styleFrom(

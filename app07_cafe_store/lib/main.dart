@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
 import 'pages/criar_conta_page.dart';
+import 'pages/inserir_page.dart';
 import 'pages/login_page.dart';
 import 'pages/principal_page.dart';
 
@@ -19,6 +20,9 @@ Future<void> main() async {
         'login' :(context) => const LoginPage(),
         'criar_conta' :(context) => const CriarContaPage(),
         'principal' :(context) => const PrincipalPage(),
+
+        'inserir': (context) => const InserirPage(),
+
       },
     ),
   );
