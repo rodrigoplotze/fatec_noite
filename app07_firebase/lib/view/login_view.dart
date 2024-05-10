@@ -120,6 +120,8 @@ class _LoginViewState extends State<LoginView> {
                   txtEmail.text,
                   txtSenha.text,
                 );
+                txtEmail.clear();
+                txtSenha.clear();
               },
               child: Text('Entrar'),
             ),

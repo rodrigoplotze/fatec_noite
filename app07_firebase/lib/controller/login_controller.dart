@@ -11,7 +11,26 @@ class LoginController {
   // Adiciona a conta de um novo usuário no serviço
   // Firebase Authentication
   //
-  criarConta(context, nome, email, senha) {}
+  criarConta(context, nome, email, senha) {
+
+    FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email, password: senha
+    ).then((resultado){
+
+      sucesso(context,'Usuário criado com sucesso!');
+      Navigator.pop(context);
+
+    }).catchError((e){
+      switch(e.code){
+        case 'email-already-in-use':
+          erro(context,'O email já foi cadastrado.');
+          break;
+        default:
+          erro(context,'ERRO: ${e.code.toString()}');
+      }
+    });
+
+  }
 
   //
   // LOGIN
@@ -20,7 +39,10 @@ class LoginController {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((resultado) {
+
       sucesso(context, 'Usuário autenticado com sucesso!');
+      Navigator.pushNamed(context, 'principal');
+
     }).catchError((e) {
       
       switch(e.code){
@@ -57,10 +79,16 @@ class LoginController {
   //
   // LOGOUT
   //
-  logout() {}
+  logout() {
+
+    FirebaseAuth.instance.signOut();
+
+  }
 
   //
   // ID do Usuário Logado
   //
-  idUsuario() {}
+  idUsuario() {
+    return FirebaseAuth.instance.currentUser!.uid;
+  }
 }
